@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoom名札ジェネレーター</title>
+    <link href="./style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header content-width">
+            <img class="header__img--logo" src="/imgs/logo.svg" alt="Zoom名札ジェネレーター">
+        </header>
+        <div class="main-content">
+            <div class="preview-area">
+                <canvas id="preview" class="preview" width="1920px" height="1080px">
+                    ブラウザを変えてお試しください。
+                </canvas>
+                <div class="preview__zoom">
+                    <img class="preview__zoom--icon" src="imgs/keyboard_voice.svg" alt="🎤">
+                    <img class="preview__zoom--icon" src="imgs/videocam.svg" alt="🎥">
+                    <img class="preview__zoom--icon zoom__icon--call_end" src="imgs/call_end.svg" alt="📞">
+                </div>
+            </div>
+            <div class="config-area">
+                <h2>背景を設定しよう</h2>
+                <div class="bg__config--label">
+                    <label class="config-label config__label--img">背景画像<input id="input-image" type="file"/></label>
+                    <span>OR</span>
+                    <label class="config-label config__label--color">背景色<input id="top-color" type="color" name="color" value="#418FFE"/></label>
+                </div>
+                <h2>あなたについて書いてみよう</h2>
+                <div class="about__config--label">
+                    <textarea id="textarea" class="textarea" rows="12" placeholder="エンジニア WEB太郎"></textarea>
+                    <label class="config-label">文字サイズ
+                      <select id="fontsize-select">
+                        <option value="28">28px</option>
+                        <option value="32">32px</option>
+                        <option value="36">36px</option>
+                        <option value="40" selected>40px</option>
+                        <option value="44">44px</option>
+                        <option value="48">48px</option>
+                      </select>
+                    </label>
+                    <label class="config-label">文字色<input id="txt-color" type="color" name="color" value="#444444"/></label>
+                    <label class="config-label">名札色<input id="bg-color" type="color" name="color" value="#FFFFFF"/></label>
+                    <!--<label class="config-label">枠線色:
+              <input id="frame-color" type="color" name="color" value="#444444"/></label> -->
+                </div>
+                <details>
+                    <summary>
+                        高度な設定(表示/非表示)
+                    </summary>
+                    <label class="config-label"><input id="right-checkbox" class="checkbox" type="checkbox" />名札を右側に表示</label>
+                    <label class="config-label"><input id="mirror-checkbox" class="checkbox" type="checkbox" />ミラー表示にする</label>
+
+                </details>
+                <h2>画像をダウンロードしよう</h2>
+                <div class="output-wrapper">
+                    <button id="generate-button" class="generate-button">🎉 画像を生成</button>
+                    <div class="output-arrow">⏩</div>
+                    <div id="output" class="output"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./constants.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
