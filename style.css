@@ -10,6 +10,10 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
+.wrapper {
+    margin-bottom: 10vh;
+}
+
 .header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -122,9 +126,22 @@ h2 {
     margin-left: 0.5rem;
 }
 
+.config-properties {
+    margin-bottom: 1.75rem;
+}
+
+.config-properties--top {
+    margin-bottom: 0.25rem;
+}
+
 .config__label--img input {
     width: 10rem;
     color: #333;
+}
+
+.config__img-annotation {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
 }
 
 .bg__config--label {
@@ -141,10 +158,11 @@ h2 {
     box-sizing: border-box;
     border-radius: 0.5rem;
     width: 100%;
-    height: 2.5rem;
+    /*height: 6rem;*/
     padding: 0.5rem 1rem;
     margin-bottom: 0.5rem;
     font-size: 1rem;
+    resize: vertical;
 }
 
 details {
@@ -212,9 +230,6 @@ details summary {
 }
 
 @media screen and (max-width: 1080px) {
-    .wrapper {
-        margin-bottom: 10vh;
-    }
     .main-content {
         width: auto;
         display: block;

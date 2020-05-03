@@ -20,9 +20,11 @@ drawPreview();
 function drawPreview() {
     const splitText = textarea.value.split("\n");
     const fontsize = Math.floor(fontsizeSelect.value);
+    previewContext.font = `${fontsize}px ${CANVAS_FONT}`;
+    const maxTextWidth = Math.floor(Math.max(...splitText.map(r => previewContext.measureText(r).width)));
     const textLineSpace = Math.floor(fontsize * 0.2);
     const leftOffset = rightCheckbox.checked ?
-        CANVAS_WIDTH - TAG_AREA_WIDTH - TAG_AREA_POSITION_X * 2 :
+        CANVAS_WIDTH - TAG_AREA_WIDTH - TAG_AREA_POSITION_X * 2 - Math.max(0, maxTextWidth - TAG_AREA_WIDTH + TAG_AREA_POSITION_X):
         0;
 
     // 全体クリア
@@ -43,7 +45,7 @@ function drawPreview() {
     previewContext.fillRect(
         TAG_AREA_POSITION_X + leftOffset,
         TAG_AREA_POSITION_Y,
-        TAG_AREA_WIDTH,
+        maxTextWidth > TAG_AREA_WIDTH - (TAG_AREA_INNER_PADDING * 2) ? maxTextWidth + (TAG_AREA_INNER_PADDING * 2) : TAG_AREA_WIDTH,
         TAG_AREA_POSITION_Y +
         TAG_AREA_INNER_PADDING +
         (splitText.length - 1) * textLineSpace +

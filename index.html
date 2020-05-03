@@ -30,36 +30,39 @@
             <div class="config-area">
                 <h2>背景を設定しよう</h2>
                 <div class="bg__config--label">
-                    <label class="config-label config__label--img">背景画像<input id="input-image" type="file"/></label>
+                    <label class="config-label config__label--img">背景画像<input id="input-image" type="file" accept="image/*"/></label>
                     <span>OR</span>
-                    <label class="config-label config__label--color">背景色<input id="top-color" type="color" name="color" value="#418FFE"/></label>
+					<label class="config-label config__label--color">背景色<input id="top-color" type="color" name="color" value="#418FFE"/></label>
+					<div class="config__img-annotation">
+						※ 画像の推奨アスペクト比は、１６：９です。
+					</div>
                 </div>
                 <h2>あなたについて書いてみよう</h2>
                 <div class="about__config--label">
-                    <textarea id="textarea" class="textarea" rows="12" placeholder="エンジニア WEB太郎"></textarea>
-                    <label class="config-label">文字サイズ
-                      <select id="fontsize-select">
-                        <option value="28">28px</option>
-                        <option value="32">32px</option>
-                        <option value="36">36px</option>
-                        <option value="40" selected>40px</option>
-                        <option value="44">44px</option>
-                        <option value="48">48px</option>
-                      </select>
-                    </label>
-                    <label class="config-label">文字色<input id="txt-color" type="color" name="color" value="#444444"/></label>
-                    <label class="config-label">名札色<input id="bg-color" type="color" name="color" value="#FFFFFF"/></label>
+					<textarea id="textarea" class="textarea" rows="5" placeholder="エンジニア WEB太郎"></textarea>
+                    <div class="config-properties">
+						<div class="config-properties--top">
+							<label class="config-label">文字サイズ
+							<select id="fontsize-select">
+								<option value="28">28px</option>
+								<option value="32">32px</option>
+								<option value="36">36px</option>
+								<option value="40" selected>40px</option>
+								<option value="44">44px</option>
+								<option value="48">48px</option>
+							</select>
+							</label>
+							<label class="config-label">文字色<input id="txt-color" type="color" name="color" value="#444444"/></label>
+							<label class="config-label">名札色<input id="bg-color" type="color" name="color" value="#FFFFFF"/></label>
+						</div>
+						<div class="config-properties--bottom">
+							<label class="config-label"><input id="right-checkbox" class="checkbox" type="checkbox" />名札を右側に表示</label>
+							<label class="config-label"><input id="mirror-checkbox" class="checkbox" type="checkbox" />ミラー表示にする</label>
+						</div>
+					</div>
                     <!--<label class="config-label">枠線色:
               <input id="frame-color" type="color" name="color" value="#444444"/></label> -->
                 </div>
-                <details>
-                    <summary>
-                        高度な設定(表示/非表示)
-                    </summary>
-                    <label class="config-label"><input id="right-checkbox" class="checkbox" type="checkbox" />名札を右側に表示</label>
-                    <label class="config-label"><input id="mirror-checkbox" class="checkbox" type="checkbox" />ミラー表示にする</label>
-
-                </details>
                 <h2>画像をダウンロードしよう</h2>
                 <div class="output-wrapper">
                     <button id="generate-button" class="generate-button">🎉 画像を生成</button>
